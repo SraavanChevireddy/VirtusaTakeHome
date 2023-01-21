@@ -16,6 +16,7 @@
 		3C057D372978050B00774373 /* Virtusa_PlayersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C057D362978050B00774373 /* Virtusa_PlayersUITestsLaunchTests.swift */; };
 		3C6A834C297C7F4300307A4C /* PlayersKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3C6A834B297C7F4300307A4C /* PlayersKit */; };
 		3C6A834F297C81D400307A4C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A834E297C81D400307A4C /* HomeViewModel.swift */; };
+		3C6A8352297C89A700307A4C /* PlayersDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A8350297C89A600307A4C /* PlayersDatabase.xcdatamodeld */; };
 		3CC21C822978553E003DE4D7 /* PlayersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC21C812978553E003DE4D7 /* PlayersCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		3C057D342978050B00774373 /* Virtusa_PlayersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Virtusa_PlayersUITests.swift; sourceTree = "<group>"; };
 		3C057D362978050B00774373 /* Virtusa_PlayersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Virtusa_PlayersUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3C6A834E297C81D400307A4C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3C6A8351297C89A700307A4C /* PlayersDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlayersDatabase.xcdatamodel; sourceTree = "<group>"; };
 		3CC21C812978553E003DE4D7 /* PlayersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCollectionViewCell.swift; sourceTree = "<group>"; };
 		3CC21C832979CC33003DE4D7 /* PlayersKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PlayersKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 				3C057D1C2978050A00774373 /* Assets.xcassets */,
 				3C057D212978050A00774373 /* Info.plist */,
 				3CC21C812978553E003DE4D7 /* PlayersCollectionViewCell.swift */,
+				3C6A8350297C89A600307A4C /* PlayersDatabase.xcdatamodeld */,
 			);
 			path = Virtusa_Players;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				3C057D182978050800774373 /* HomeViewController.swift in Sources */,
 				3CC21C822978553E003DE4D7 /* PlayersCollectionViewCell.swift in Sources */,
 				3C057D142978050800774373 /* AppDelegate.swift in Sources */,
+				3C6A8352297C89A700307A4C /* PlayersDatabase.xcdatamodeld in Sources */,
 				3C6A834F297C81D400307A4C /* HomeViewModel.swift in Sources */,
 				3C057D162978050800774373 /* SceneDelegate.swift in Sources */,
 			);
@@ -605,6 +609,19 @@
 			productName = PlayersKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		3C6A8350297C89A600307A4C /* PlayersDatabase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3C6A8351297C89A700307A4C /* PlayersDatabase.xcdatamodel */,
+			);
+			currentVersion = 3C6A8351297C89A700307A4C /* PlayersDatabase.xcdatamodel */;
+			path = PlayersDatabase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3C057D082978050800774373 /* Project object */;
 }
