@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "2F9CE9E9-F657-4546-91C6-B0F010DBCC1D"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C7699D28-7807-4973-ABDA-9F7455711E4D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Virtusa_Players/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "86BFEF3E-A39B-417A-815D-0048CE8A2B78"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Virtusa_Players/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "application(_:configurationForConnecting:options:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2FEFFEBA-DB7C-4360-8E8B-764FC754D237"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlayersKit/Sources/PlayersKit/Network/NetworkLayer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getInformationFromDatabase(for:and:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2FEFFEBA-DB7C-4360-8E8B-764FC754D237 - b38267c1cc062eb9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlayersKit.NetworkLayer.getInformationFromDatabase&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(for: PlayersKit.NetworkControllers, and: &#x3c4;_0_0.Type) throws -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, some&gt;"
+                  moduleName = "Virtusa_Players"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sraavanchevireddy/Desktop/Virtusa_Players/PlayersKit/Sources/PlayersKit/Network/NetworkLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "2540">
+               </Location>
+               <Location
+                  uuid = "2FEFFEBA-DB7C-4360-8E8B-764FC754D237 - b38267c1cc062eb9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlayersKit.NetworkLayer.getInformationFromDatabase&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(for: PlayersKit.NetworkControllers, and: &#x3c4;_0_0.Type) throws -&gt; Combine.AnyPublisher&lt;&#x3c4;_0_0, some&gt;"
+                  moduleName = "Virtusa_Players"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sraavanchevireddy/Desktop/Virtusa_Players/PlayersKit/Sources/PlayersKit/Network/NetworkLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "2748">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19D2C3B9-75C7-4B9E-94B3-8779C5A7D5CD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlayersKit/Sources/PlayersKit/Network/NetworkLayer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "requestURL(to:controller:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
