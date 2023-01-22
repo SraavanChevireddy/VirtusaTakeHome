@@ -21,14 +21,18 @@ class HomeViewController: UIViewController {
     /// - Tag: gamesDataSource
     var gamesDataSource: UICollectionViewDiffableDataSource<GamesGrid, Team.ID>!
     
+    convenience init(model: HomeViewModel!) {
+        self.init()
+        self.homeViewModel = model
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        title = "Teams"
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         configureCollectionViewLayout()
-        homeViewModel = HomeViewModel()
-        homeViewModel.subscribeGames()
         configureDataSource()
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.loadGamesInformation()
@@ -57,9 +61,9 @@ class HomeViewController: UIViewController {
             var contentConfiguration = UIListContentConfiguration.subtitleCell()
             contentConfiguration.text = team.name
             contentConfiguration.secondaryText = "Team"
-//            contentConfiguration.image = recipe.smallImage
-//            contentConfiguration.imageProperties.cornerRadius = 4
-//            contentConfiguration.imageProperties.maximumSize = CGSize(width: 60, height: 60)
+            contentConfiguration.image = UIImage(systemName: "heart.fill")
+            contentConfiguration.imageProperties.cornerRadius = 4
+            contentConfiguration.imageProperties.maximumSize = CGSize(width: 60, height: 60)
             cell.contentConfiguration = contentConfiguration
             cell.accessories = []
         }

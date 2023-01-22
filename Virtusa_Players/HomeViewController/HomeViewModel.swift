@@ -33,7 +33,7 @@ class HomeViewModel: ObservableObject, GameRepository {
                     debugPrint("You got some result \(result)")
                 } receiveValue: { [weak self] teams in
                     self?.teams = teams
-                    print("You got teams! \(teams)")
+                    debugPrint("You got teams! \(teams)")
                 }.store(in: &cancellables)
         } else {
             debugPrint("GONE!")
@@ -46,7 +46,7 @@ class HomeViewModel: ObservableObject, GameRepository {
                 .sink { result in
                     debugPrint("You got some result \(result)")
                 } receiveValue: { matches in
-                    print("You got matches!")
+                    debugPrint("You got matches!")
                 }.store(in: &cancellables)
         }
     }
