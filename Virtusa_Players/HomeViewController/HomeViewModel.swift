@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 import PlayersKit
+import UIKit
 
 class HomeViewModel: ObservableObject, GameRepository {
 
@@ -15,7 +16,7 @@ class HomeViewModel: ObservableObject, GameRepository {
     var gameRoom: GamesViewModel!
     
     @Published var teams: TeamDTO!
-    
+
     init() {
         gameRoom = GamesViewModel()
     }
@@ -48,6 +49,14 @@ class HomeViewModel: ObservableObject, GameRepository {
                     print("You got matches!")
                 }.store(in: &cancellables)
         }
+    }
+    
+    func team(withId: String) -> Team?{
+        return teams.teams.first(where: { $0.id == withId })
+    }
+    
+    func  teamIds() -> [Team.ID] {
+        return teams.teams.map { $0.id }
     }
     
     

@@ -7,67 +7,80 @@
 
 import UIKit
 import Combine
+import PlayersKit
 
 class HomeViewController: UIViewController {
         
     private var homeViewModel: HomeViewModel!
-    private var layout: UICollectionViewFlowLayout = {
-       let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        return layout
-    }()
+    private var collectionView: UICollectionView!
     
-    private var collectionView : UICollectionView!
-    
-    enum Section {
+    /// - Tag: Games grid
+    enum GamesGrid: Int {
         case main
     }
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, Video>
-
+    /// - Tag: gamesDataSource
+    var gamesDataSource: UICollectionViewDiffableDataSource<GamesGrid, Team.ID>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
+        configureCollectionViewLayout()
         homeViewModel = HomeViewModel()
-        configureCollectionView()
-    }
-    
-    private func configureCollectionView() {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.frame = view.bounds
-        collectionView.backgroundColor = .red
-//        makeDataSource()
         homeViewModel.subscribeGames()
+        configureDataSource()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.loadGamesInformation()
+        }
     }
     
-    func makeDataSource() -> DataSource {
-      // 1
-      let dataSource = DataSource(
-        collectionView: collectionView,
-        cellProvider: { (collectionView, indexPath, video) ->
-          UICollectionViewCell? in
-          // 2
-          let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: "PlayersCollectionViewCell",
-            for: indexPath) as? PlayersCollectionViewCell
-            cell?.backgroundColor = UIColor.green
-          return cell
-      })
-      return dataSource
+    private func configureCollectionViewLayout() {
+        let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
+            let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
+            let section = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
+            
+            return section
+        }
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
+        view.addSubview(collectionView)
     }
-
-
+    
+    private func trailingSwipeActionsConfiguration(for indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let configuration = UISwipeActionsConfiguration(actions: [])
+        configuration.performsFirstActionWithFullSwipe = false
+        return configuration
+    }
+    
+    private func configureDataSource() {
+        let teamsCellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Team> { cell, indexPath, team in
+            var contentConfiguration = UIListContentConfiguration.subtitleCell()
+            contentConfiguration.text = team.name
+            contentConfiguration.secondaryText = "Team"
+//            contentConfiguration.image = recipe.smallImage
+//            contentConfiguration.imageProperties.cornerRadius = 4
+//            contentConfiguration.imageProperties.maximumSize = CGSize(width: 60, height: 60)
+            cell.contentConfiguration = contentConfiguration
+            cell.accessories = []
+        }
+        
+        // Create the diffable data source and its cell provider.
+        gamesDataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) {
+            collectionView, indexPath, identifier -> UICollectionViewCell in
+            /// `identifier` is an instance of `Team.ID`. Use it to
+            // retrieve the recipe from the backing data store.
+            let team = self.homeViewModel.team(withId: identifier)!
+            return collectionView.dequeueConfiguredReusableCell(using: teamsCellRegistration, for: indexPath, item: team)
+        }
+    }
+    
+    private func loadGamesInformation() {
+        // Update the collection view by adding the recipe identifiers to
+        // a new snapshot, and apply the snapshot to the diffable data source.
+        var snapshot = NSDiffableDataSourceSnapshot<GamesGrid, Team.ID>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(homeViewModel.teamIds(), toSection: .main)
+        gamesDataSource.applySnapshotUsingReloadData(snapshot)
+    }
 }
 
-
-class Video : Hashable {
-    var id: String!
-    
-    static func == (lhs: Video, rhs: Video) -> Bool {
-        lhs.id == rhs.id
-    }
-    
-    func hash(into hasher: inout Hasher) {
-      hasher.combine(id)
-    }
-}
