@@ -9,18 +9,11 @@ import UIKit
 import Combine
 import PlayersKit
 
-class HomeViewController: UIViewController {
+class TeamViewController: UIViewController {
         
     private var homeViewModel: HomeViewModel!
     private var collectionView: UICollectionView!
-    
-    /// - Tag: Games grid
-    enum GamesGrid: Int {
-        case main
-    }
-    /// - Tag: gamesDataSource
-    var gamesDataSource: UICollectionViewDiffableDataSource<GamesGrid, Team.ID>!
-    
+
     convenience init(model: HomeViewModel!) {
         self.init()
         self.homeViewModel = model
@@ -34,9 +27,6 @@ class HomeViewController: UIViewController {
         
         configureCollectionViewLayout()
         configureDataSource()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.loadGamesInformation()
-        }
     }
     
     private func configureCollectionViewLayout() {
@@ -69,22 +59,13 @@ class HomeViewController: UIViewController {
         }
         
         // Create the diffable data source and its cell provider.
-        gamesDataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) {
+        homeViewModel.teamDataStore = UICollectionViewDiffableDataSource(collectionView: collectionView) {
             collectionView, indexPath, identifier -> UICollectionViewCell in
             /// `identifier` is an instance of `Team.ID`. Use it to
             // retrieve the recipe from the backing data store.
             let team = self.homeViewModel.team(withId: identifier)!
             return collectionView.dequeueConfiguredReusableCell(using: teamsCellRegistration, for: indexPath, item: team)
         }
-    }
-    
-    private func loadGamesInformation() {
-        // Update the collection view by adding the recipe identifiers to
-        // a new snapshot, and apply the snapshot to the diffable data source.
-        var snapshot = NSDiffableDataSourceSnapshot<GamesGrid, Team.ID>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(homeViewModel.teamIds(), toSection: .main)
-        gamesDataSource.applySnapshotUsingReloadData(snapshot)
     }
 }
 

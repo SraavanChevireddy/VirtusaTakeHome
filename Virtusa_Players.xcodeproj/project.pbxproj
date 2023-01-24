@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C057D142978050800774373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C057D132978050800774373 /* AppDelegate.swift */; };
 		3C057D162978050800774373 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C057D152978050800774373 /* SceneDelegate.swift */; };
-		3C057D182978050800774373 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C057D172978050800774373 /* HomeViewController.swift */; };
+		3C057D182978050800774373 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C057D172978050800774373 /* TeamViewController.swift */; };
 		3C057D1D2978050A00774373 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C057D1C2978050A00774373 /* Assets.xcassets */; };
 		3C057D2B2978050A00774373 /* Virtusa_PlayersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C057D2A2978050A00774373 /* Virtusa_PlayersTests.swift */; };
 		3C057D352978050B00774373 /* Virtusa_PlayersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C057D342978050B00774373 /* Virtusa_PlayersUITests.swift */; };
@@ -42,7 +42,7 @@
 		3C057D102978050800774373 /* Virtusa_Players.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Virtusa_Players.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C057D132978050800774373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C057D152978050800774373 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3C057D172978050800774373 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3C057D172978050800774373 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		3C057D1C2978050A00774373 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C057D212978050A00774373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C057D262978050A00774373 /* Virtusa_PlayersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Virtusa_PlayersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,7 +145,7 @@
 		3C6A834D297C816F00307A4C /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3C057D172978050800774373 /* HomeViewController.swift */,
+				3C057D172978050800774373 /* TeamViewController.swift */,
 				3C6A834E297C81D400307A4C /* HomeViewModel.swift */,
 				3CC8F906297DD9BD0080145C /* GameViewController.swift */,
 				3CC8F908297DDA2D0080145C /* MatchesViewController.swift */,
@@ -286,7 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CC8F907297DD9BD0080145C /* GameViewController.swift in Sources */,
-				3C057D182978050800774373 /* HomeViewController.swift in Sources */,
+				3C057D182978050800774373 /* TeamViewController.swift in Sources */,
 				3CC8F909297DDA2D0080145C /* MatchesViewController.swift in Sources */,
 				3C057D142978050800774373 /* AppDelegate.swift in Sources */,
 				3C6A8352297C89A700307A4C /* PlayersDatabase.xcdatamodeld in Sources */,

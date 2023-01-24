@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import PlayersKit
 
 class GameViewController: UITabBarController {
 
-    private var teamsViewController: HomeViewController!
+    private var teamsViewController: TeamViewController!
     private var matchesViewController: MatchesViewController!
     
     private var homeModel: HomeViewModel!
@@ -27,7 +28,7 @@ class GameViewController: UITabBarController {
         let teamsTabBarItem = UITabBarItem(title: "Teams", image: UIImage(systemName: "heart.fill"), tag: 0)
         let matchesTabBarItem = UITabBarItem(title: "Matches", image: UIImage(systemName: "gamecontroller.fill"), tag: 1)
         
-        teamsViewController = HomeViewController(model: homeModel)
+        teamsViewController = TeamViewController(model: homeModel)
         teamsViewController.tabBarItem = teamsTabBarItem
         
         matchesViewController = MatchesViewController(model: homeModel)
