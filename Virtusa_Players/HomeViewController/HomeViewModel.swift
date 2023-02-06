@@ -94,7 +94,7 @@ class HomeViewModel: ObservableObject, GameRepository {
         upcomingDataStore.applySnapshotUsingReloadData(snapshot)
     }
     
-    func team(withId: String) -> Team?{
+    func team(withId: String) -> Team? {
         return teams.first(where: { $0.id == withId })
     }
     
